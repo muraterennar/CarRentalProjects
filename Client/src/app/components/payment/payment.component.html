@@ -1,0 +1,219 @@
+<div class="container">
+  <div class="alert alert-success" role="alert" *ngIf="paymentSuccess == true">
+    <h4 class="alert-heading">Ödeme Başarıyla Gerçekleştirildi !</h4>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+      voluptate, itaque esse nam, maxime vitae ipsum fugit minima provident
+      ducimus, iste commodi corrupti. Explicabo laboriosam eaque asperiores,
+      eligendi hic impedit!
+    </p>
+    <hr />
+    <p class="mb-0">Fatura Sms ve İlgili Mail Adresine Gönderildi</p>
+  </div>
+
+  <form *ngIf="paymentSuccess == false" [formGroup]="creditCardFrom">
+    <div class="row">
+      <div class="col">
+        <h3 class="title">Kiralama Bilgileri</h3>
+
+        <div class="inputBox">
+          <span>Ad :</span>
+          <input type="text" placeholder="*****" />
+        </div>
+        <div class="inputBox">
+          <span>Soyad :</span>
+          <input type="text" placeholder="*****" />
+        </div>
+        <div class="inputBox">
+          <span>E-mail :</span>
+          <input type="email" placeholder="example@example.com" />
+        </div>
+
+        <div class="flex">
+          <div class="inputBox">
+            <span>Telefon(+90)</span>
+            <input type="text" placeholder="123 456" />
+          </div>
+        </div>
+
+        <div class="inputBox">
+          <span>Kiralama Tarihi :</span>
+          <input
+            type="text"
+            placeholder="2022-01-01"
+            [value]="getRentDate()"
+            disabled
+          />
+        </div>
+
+        <div class="inputBox">
+          <span>Teslim Tarihi :</span>
+          <input
+            type="text"
+            placeholder="2022-02-02"
+            [value]="getReturnDate()"
+            disabled
+          />
+        </div>
+      </div>
+
+      <div class="col">
+        <h3 class="title">Ödeme</h3>
+
+        <div class="inputBox">
+          <span>Kabul Edilen Kartlar :</span>
+          <img src="../../../assets/images/card_img.png" alt="" />
+        </div>
+        <div class="inputBox">
+          <span>Kart Sahibinin Adı :</span>
+          <input
+            type="text"
+            placeholder=""
+            formControlName="nameOfTheCardHolder"
+          />
+        </div>
+        <div class="inputBox">
+          <span>Cart Numarsı :</span>
+          <input
+            type="text"
+            placeholder="****-****-****-****"
+            formControlName="cardNumber"
+          />
+        </div>
+        <div class="inputBox">
+          <span>Ay :</span>
+          <input
+            type="text"
+            placeholder="5"
+            formControlName="expirationMonth"
+          />
+        </div>
+
+        <div class="flex">
+          <div class="inputBox">
+            <span>Yıl :</span>
+            <input
+              type="text"
+              placeholder="2022"
+            formControlName="expirationYear"
+            />
+          </div>
+          <div class="inputBox">
+            <span>CVV :</span>
+            <input type="text" placeholder="123" formControlName="cvv" />
+
+          </div>
+        </div>
+
+        <div class="form-check">
+          <input
+            class="form-check-input check"
+            type="checkbox"
+            id="defaultCheck1"
+            (click)="onChecked($event)"
+          />
+          <label class="form-check-label fs-2" for="defaultCheck1">
+            Kartı Kaydet
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <input
+      type="submit"
+      value="Ödeme Yap"
+      (click)="payment()"
+      class="submit-btn"
+    />
+  </form>
+</div>
+<!-- 
+ <div class="alert alert-success" role="alert" *ngIf="paymentSuccess == true">
+    <h4 class="alert-heading">Ödeme Başarıyla Gerçekleştirildi !</h4>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+      voluptate, itaque esse nam, maxime vitae ipsum fugit minima provident
+      ducimus, iste commodi corrupti. Explicabo laboriosam eaque asperiores,
+      eligendi hic impedit!
+    </p>
+    <hr />
+    <p class="mb-0">Fatura Sms ve İlgili Mail Adresine Gönderildi</p>
+  </div>
+
+<div class="container" *ngIf="paymentSuccess == false">
+   <div class="modal-body">
+    <div class="form-group mb-3">
+      <div class="row">
+        <label class="col-md-2 control-label">Full Name</label>
+        <div class="col-md-10">
+          <input
+            type="text"
+            [(ngModel)]="creditCard.nameOfTheCardHolder"
+            class="form-control"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="form-group mb-3">
+      <div class="row">
+        <label class="col-md-2 control-label">Cart Number</label>
+        <div class="col-md-10">
+          <input
+            type="text"
+            [(ngModel)]="creditCard.cardNumber"
+            class="form-control"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="form-group mb-3">
+      <div class="row">
+        <label class="col-md-2 control-label">Month</label>
+        <div class="col-md-4">
+          <input
+            type="text"
+            [(ngModel)]="creditCard.expirationMonth"
+            class="form-control"
+          />
+        </div>
+        <label class="col-md-2 control-label">Year</label>
+        <div class="col-md-4">
+          <input
+            type="text"
+            [(ngModel)]="creditCard.expirationYear"
+            class="form-control"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="form-group mb-3">
+      <div class="row">
+        <label class="col-md-2 control-label">CVV</label>
+        <div class="col-md-10">
+          <input
+            type="text"
+            [(ngModel)]="creditCard.cvv"
+            class="form-control"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <label for="rememberMe">Remember Card</label>
+    <input
+      type="checkbox"
+      id="rememberMe"
+      [(ngModel)]="rememberCard"
+      class="control-checkbox"
+    />
+    <button
+      type="button"
+      (click)="postRentAndPay(creditCard)"
+      data-bs-dismiss="modal"
+      class="btn btn-primary"
+    >
+      Pay and Rent A Car
+    </button>
+  </div>
+</div> -->

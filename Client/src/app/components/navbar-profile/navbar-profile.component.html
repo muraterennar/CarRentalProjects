@@ -1,0 +1,105 @@
+<!--Navbar Start-->
+<header class="header">
+  <div id="menu-btn" class="fas fa-bars"></div>
+
+  <a href="" class="logo"> <span>Araç</span>Kirala </a>
+
+  <nav class="navbar active mx-auto">
+    <a
+      *ngFor="let category of categories"
+      [routerLink]="navRouting(category.categoryName)"
+      >{{ category.categoryName }}</a
+    >
+
+    <div class="dropdown action" *ngFor="let user of users">
+      <img
+        class="nav-link dropdown-toggle profile"
+        [src]="getUserImage(user.imagePath)"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        role="button"
+        id="navbarDropdown"
+        alt=""
+      />
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <h3>{{user.firstName}}<br /><span>Welcome</span></h3>
+        <li><a class="dropdown-item" (click)="goTouserProfile(user.email)"><i class="uil uil-user"></i> Profil</a></li>
+        <li><a class="dropdown-item" (click)="goToAdminPanel()"><i class="uil uil-edit"></i> Admin Paneli</a></li>
+        <li><a class="dropdown-item" (click)="logOut()"> <i class="uil uil-sign-out-alt"></i> Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- <div class="action">
+    <div class="profile">
+      <img src="../../../assets/images/pic-1.png" alt="" />
+    </div>
+    <div class="menu">
+      <h3>Murat Eren Nar <br /><span>Welcome</span></h3>
+      <ul>
+        <li><i class="uil uil-user"></i><a href="#">My Profile</a></li>
+        <li><i class="uil uil-edit"></i><a href="#">Edit Profile</a></li>
+        <li><i class="uil uil-setting"></i><a href="#">Setting</a></li>
+        <li>
+          <i class="uil uil-sign-out-alt"></i><a (click)="logOut()">Log Out</a>
+        </li>
+      </ul>
+    </div>
+  </div> -->
+</header>
+
+<!--Navbar End-->
+
+<!--Boootstrap-->
+
+<!-- <nav class="navbar navbar-expand-lg bg-light header sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand fs-1 logo"><span>Araç</span> Kirala</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse navbar-nav-scroll"
+      id="navbarSupportedContent navbarScrollingDropdown"
+    >
+      <ul class="navbar-nav mx-auto mb-lg-0 navbar">
+        <li class="nav-item" *ngFor="let category of categories">
+          <a
+            [routerLink]="navRouting(category.categoryName)"
+            class="nav-link active"
+            aria-current="page"
+            >{{ category.categoryName }}</a
+          >
+        </li>
+
+        <div class="dropdown action">
+      <img
+        class="nav-link dropdown-toggle profile"
+        src="../../../assets/images/pic-1.png"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        role="button"
+        id="navbarDropdown"
+        alt=""
+      />
+      <ul class="dropdown-menu mx-auto" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item"><i class="uil uil-user"></i> Profil</a></li>
+            <li><a class="dropdown-item"><i class="uil uil-edit"></i> Admin Paneli</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" (click)="logOut()" > <i class="uil uil-sign-out-alt"></i> Logout</a></li>
+      </ul>
+    </div>
+      </ul>
+    </div>
+  </div>
+</nav> -->
+
+<!--Boootstrap-->

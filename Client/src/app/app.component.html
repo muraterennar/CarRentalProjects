@@ -1,0 +1,19 @@
+<div class="col-md" *ngIf="loaded==false">
+  <div class="col-md-12">
+    <app-navbar></app-navbar>
+    <!-- <app-navbar-profile *ngIf="dataLoaded == true"></app-navbar-profile> -->
+  </div>
+  <div class="col-md-12">
+    <router-outlet></router-outlet>
+  </div>
+  <!-- <div class="col-md-12">
+  <app-newslatter></app-newslatter>
+</div> -->
+  <div class="col-md-12">
+    <app-footer></app-footer>
+  </div>
+</div>
+
+<div class="col-md-12" *ngIf="loaded == true">
+  <app-admin-panel></app-admin-panel>
+</div>

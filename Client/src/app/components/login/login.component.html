@@ -1,0 +1,23 @@
+<!--Login Start-->
+<div class="login-form-container">
+  <a id="close-login-form" routerLink=""><span class="fas fa-times"></span></a>
+
+  <form [formGroup]="loginForm">
+    <h3>kullanıcı girişi</h3>
+    <input formControlName="email" type="email" placeholder="e-mail" class="box" />
+    <input formControlName="password" type="password" placeholder="şifre" class="box" />
+    <p>şifreni unuttun mu! <a href="#">buraya tıkla</a></p>
+    <input (click)="login()" type="button" value="Giriş Yap"  class="button" />
+    <!-- <p>veya ile giriş yap</p>
+    <div class="buttons">
+      <a href="#" class="button"><i class="fa-brands fa-google"></i> google </a>
+      <a href="#" class="button"
+        ><i class="fa-brands fa-linkedin"></i> linkedin
+      </a>
+    </div> -->
+    <p>hesabın yok mu ?</p>
+
+    <button routerLink="/register" id="register-btn" class="button">hemen oluştur</button>
+  </form>
+</div>
+<!--Login End-->

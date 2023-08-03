@@ -1,0 +1,61 @@
+<section class="container carDetail my-5">
+  <div class="row mt-2">
+    <!--İmages Details-->
+    <div class="col-lg-5 col-md-12 col-12 image-hidden">
+      <!--Big İmage-->
+      <img
+        *ngFor="let car of cars"
+        class="img-fluid w-100 pb-1"
+        src="{{getImagePath(car.imagePath)}}"
+        id="MainImg"
+        alt=""
+      />
+
+      <!--Poup Image-->
+      <div class="poup-img">
+        <span><i class="fa-solid fa-xmark"></i></span>
+        <img src="" alt="" />
+      </div>
+    </div>
+
+    <!--Car Deatils-->
+    <div class="col-lg-6 col-md-12 col-12 c-detail ms-auto" *ngFor="let car of cars">
+      <h5 class="heading">Ana Sayfa / <span>Araç Detayı</span></h5>
+      <h1 class="py-4">{{car.brandName}}</h1>
+      <h2><span>Araç Rengi : </span>{{car.colorName}}</h2>
+      <h2><span>Araç Model Yılı : </span>{{car.brandModel}}</h2>
+      <h2 class="my-3"><span>Kiralama Tutarı : </span>{{car.dailyPrice}}₺</h2>
+      <button (click)="goToRental(car.carId)" class="rent-btn">Kirala</button>
+      <h4 class="mt-5 mb-3 fs-3">Araç Detayları</h4>
+      <hr class="mb-5" />
+      <span
+        >{{car.descriptions}}</span
+      >
+    </div>
+  </div>
+</section>
+
+<!--Featured-->
+<section id="featured" class="my-5">
+  <div class="container text-center mt-5 py-5">
+    <h3>Daha Fazla Araç</h3>
+    <hr class="mb-5 mx-auto" />
+  </div>
+
+  <div class="row mx-auto container-fluid">
+    <div class="car text-center col-lg-3 col-md-4 col-12 ps-5" *ngFor="let moreCar of moreCars | slice:0:4; let i = index">
+      <img
+        class="img-fluid mb-5"
+        [src]="getImagePath(moreCar.imagePath)"
+        alt=""
+      />
+      <h3 class="c-name">{{moreCar.brandName}}</h3>
+      <h2 class="c-price">{{moreCar.dailyPrice}}₺</h2>
+      <!-- <button class="rent-featured-btn" routerLink="/Ana Sayfa/Arabalar/{{moreCar.carId}}">İncele</button> -->
+      <button class="rent-featured-btn" (click)="getRouter(moreCar.carId)" (click)="reload()">İncele</button>
+    </div>
+  </div>
+</section>
+
+
+<app-comments></app-comments>

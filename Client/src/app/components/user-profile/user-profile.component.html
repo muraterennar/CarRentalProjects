@@ -1,0 +1,142 @@
+<div class="container">
+  <div class="col-md-12">
+    <div class="card text-center">
+      <div class="card-header fs-2">User Profile</div>
+      <div class="card-body" *ngFor="let user of users">
+        <img
+          [src]="getUserImage(user.imagePath)"
+          class="mx-auto d-block"
+          style="width: 200px; border-radius: 50%"
+          alt="..."
+        />
+
+        <h2 class="card-title">{{ user.firstName + " " + user.lastName }}</h2>
+        <div class="row g-2">
+          <div class="col-md-6">
+            <div class="row mb-3">
+              <label for="inputEmail3" class="col-sm-2 col-form-label"
+                >Email</label
+              >
+              <div class="col-sm-10">
+                <input
+                  type="email"
+                  class="form-control text-lowercase"
+                  id="inputEmail3"
+                  value="{{ user.email }}"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="row mb-3">
+              <label for="inputEmail3" class="col-sm-2 col-form-label"
+                >City</label
+              >
+              <div class="col-sm-10">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputEmail3"
+                  value="{{ user.cityName }}"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="row mb-3">
+              <label for="inputEmail3" class="col-sm-2 col-form-label"
+                >Phone</label
+              >
+              <div class="col-sm-10">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputEmail3"
+                  value="{{ user.phoneNumber }}"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="row mb-3">
+              <label for="inputEmail3" class="col-sm-2 col-form-label"
+                >Gender</label
+              >
+              <div class="col-sm-10">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputEmail3"
+                  value="{{ user.genderName }}"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="row mb-3">
+              <label for="inputEmail3" class="col-sm-2 col-form-label"
+                >Birthdate</label
+              >
+              <div class="col-sm-10">
+                <input
+                  type="date-local"
+                  class="form-control"
+                  id="inputEmail3"
+                  value="{{ user.birthDate | date: 'dd-mm-yyyy' }}"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 input-label">
+            <div class="row mb-3">
+              <label for="inputEmail3" class="col-sm-2 col-form-label"
+                >Addres</label
+              >
+              <div class="col-sm-10">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputEmail3"
+                  value="{{ user.address }}"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="row mb-3">
+              <label for="inputEmail3" class="col-sm-2 col-form-label"
+                >Comments</label
+              >
+              <div class="col-sm-10">
+                <textarea
+                  class="form-control"
+                  placeholder="Leave a comment here"
+                  id="floatingTextarea2"
+                  style="height: 100px"
+                  disabled
+                  >{{ user.comment }}
+                </textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <a class="btn mt-3" (click)="goToUserProfileEdit(user.email)"
+          >Edit Profile</a
+        > -->
+      </div>
+      <!-- <div class="card-footer text-muted"></div> -->
+    </div>
+  </div>
+</div>

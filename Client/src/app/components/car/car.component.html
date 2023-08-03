@@ -1,0 +1,65 @@
+<section class="featured" id="featured">
+  <h1 class="heading"><span>araçlar</span></h1>
+
+  <div class="swiper featured-slider">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide box" *ngFor="let car of carDetails | slice:0:8; let i = index">
+        <img [src]="getCarImagePath(car.imagePath)" alt="" />
+        <div class="content">
+          <h3>{{car.brandName}}</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <div class="price">{{car.dailyPrice}}₺/-</div>
+          <a routerLink="/AnaSayfa/Arabalar/{{car.carId}}" class="button">incele</a>
+        </div>
+      </div>
+
+      <!-- <div class="swiper-slide box" *ngFor="let car of carDetails">
+        <img [src]="getCarImagePath(car.imagePath)" alt="" />
+        <div class="content">
+          <h3>{{car.brandName}}</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <div class="price">{{car.dailyPrice}}₺/-</div>
+          <a routerLink="/Ana Sayfa/Arabalar/{{car.carId}}" class="button">incele</a>
+        </div>
+      </div> -->
+
+    </div>
+
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <div class="swiper featured-slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide box" *ngFor="let car of carDetails | slice:8:16; let i = index">
+        <img [src]="getCarImagePath(car.imagePath)" alt="" />
+        <div class="content">
+          <h3>{{car.brandName}}</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <div class="price">{{car.dailyPrice}}₺/-</div>
+          <a routerLink="/AnaSayfa/Arabalar/{{car.carId}}" class="button">incele</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper-pagination"></div>
+  </div>
+</section>

@@ -1,0 +1,291 @@
+:root {
+  --yellow: #f9d806;
+  --light-yellow: #ffee80;
+  --black: #130f40;
+  --light-color: #666;
+  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  --border: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+
+* {
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+}
+
+.heading {
+  padding-bottom: 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--black);
+}
+
+.heading span {
+  position: relative;
+  z-index: 0;
+}
+
+.heading span::before {
+  content: "";
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--light-yellow);
+  z-index: -1;
+  clip-path: polygon(0 90%, 100% 80%, 100% 100%, 0% 100%);
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+}
+
+.container{
+  padding-top: 80px;
+}
+
+.offcanvas-title{
+  color: var(--black);
+}
+
+.offcanvas{
+  background: #f1f1f1;
+}
+
+hr {
+  height: 1%;
+  width: 30%;
+  color: var(--yellow)
+}
+
+.star {
+  font-size: 0.8rem;
+  color: var(--yellow);
+  padding: 10px 0;
+}
+
+.c-detail {
+  padding-left: 0.5rem;
+}
+
+.c-detail span{
+  color: var(--black);
+  font-size: 1.4rem;
+}
+
+section .c-detail h1{
+  color: var(--black);
+  font-size: 1.4rem;
+  left: 50%;
+}
+
+.rent-btn {
+  background: var(--light-yellow);
+  color: var(--black);
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 0.5rem;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 3rem;
+  transition: transform 0.8 all;
+}
+
+.rent-btn:hover {
+  background: var(--yellow);
+  transform: scale(1.1);
+}
+
+.image-hidden {
+  overflow: hidden;
+  height: 50%;
+  width: 45%;
+  border-radius: 0.8rem;
+}
+
+.img-fluid {
+  width: 100%;
+  display: block;
+  transition: transform 2s;
+}
+
+.img-fluid:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.small-img-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.small-img-col {
+  flex-basis: 75%;
+  cursor: pointer;
+}
+
+.carDetail select {
+  display: block;
+}
+
+/* Resim tam ekran yapma*/
+.poup-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.9);
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  display: none;
+}
+
+.poup-img span {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 45px;
+  font-weight: bold;
+  color: var(--black);
+  cursor: pointer;
+  z-index: 100;
+  top: 10%;
+}
+
+.poup-img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  object-fit: cover;
+}
+
+/*Featured*/
+
+.car {
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.car img {
+  transition: 0.3s all;
+}
+
+.car:hover img {
+  opacity: 0.7;
+}
+
+.car .rent-featured-btn {
+  background: var(--light-yellow);
+  color: var(--black);
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 0.5rem;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 3rem;
+  transform: translateY(20px);
+  transition: all 0.3s;
+  opacity: 0;
+}
+.car:hover .rent-featured-btn {
+  background: var(--light-yellow);
+  color: var(--black);
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 0.5rem;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 3rem;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@media (max-width: 991.98px) {
+  .poup-img img {
+    width: 80%;
+  }
+
+  .poup-img span {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-hidden {
+    width: 100%;
+  }
+
+  .c-detail {
+    padding-left: 1rem;
+  }
+  .poup-img img {
+    width: 75%;
+  }
+
+  .poup-img span {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .image-hidden {
+    width: 100%;
+  }
+
+  .c-detail {
+    padding-left: 1rem;
+  }
+  .poup-img img {
+    width: 60%;
+  }
+
+  .poup-img span {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 280px) {
+
+  .rent-btn {
+    background: var(--light-yellow);
+    color: var(--black);
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 0.5rem;
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 3rem;
+    transition: transform 0.8 all;
+  }
+
+  .rent-btn:hover {
+    background: var(--yellow);
+    transform: scale(1.01);
+  }
+
+  .image-hidden {
+    width: 100%;
+  }
+  .poup-img img {
+    width: 60%;
+  }
+
+  .poup-img span {
+    font-size: 10px;
+  }
+}

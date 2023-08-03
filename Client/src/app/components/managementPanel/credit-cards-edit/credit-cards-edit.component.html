@@ -1,0 +1,26 @@
+<table class="table table-striped table-sm">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Müşteri Id</th>
+      <th scope="col">Kartın Üzrindeki İsm</th>
+      <th scope="col">Kart Numarası</th>
+      <th scope="col">CVV</th>
+      <th scope="col">Son Kullanım Ayı</th>
+      <th scope="col">Son Kullanım Yılı</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let creditCard of creditCards">
+      <td>{{ creditCard.id }}</td>
+      <td>{{ creditCard.customerId }}</td>
+      <td>{{ creditCard.nameOfTheCardHolder }}</td>
+      <td>{{ creditCard.cardNumber }}</td>
+      <td>{{ creditCard.cvv }}</td>
+      <td>{{ creditCard.expirationMonth }}</td>
+      <td>{{ creditCard.expirationYear }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button class="btn btn-dark" (click)="backToDashboard()">Geri</button>

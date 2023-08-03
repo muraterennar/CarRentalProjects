@@ -1,0 +1,48 @@
+<!--Navbar Start-->
+<header class="header">
+  <div id="menu-btn" class="fas fa-bars"></div>
+
+  <a href="" class="logo"> <span>Araç</span>Kirala </a>
+
+  <!-- <nav class="navbar active">
+    <a
+      *ngFor="let category of categories"
+      routerLink="/{{ category.categoryName}}"
+      >{{ category.categoryName }}</a
+    >
+  </nav> -->
+  <nav class="navbar active">
+    <a routerLink="/">Ana Sayfa</a>
+    <a routerLink="/Markalar">Markalar</a>
+    <a routerLink="/Arabalar">Arabalar</a>
+    <a routerLink="/Iletisim">İletişim</a>
+  </nav>
+
+  <div id="login-btn" *ngIf="avatarControl() === false">
+    <button routerLink="/login" class="button"><i class="far fa-user"></i> Giriş</button>
+
+  </div>
+
+  <!--User Account Dropdown-->
+
+  <div class="action" *ngIf="avatarControl() === true">
+    <div class="profile">
+      <img src="../../../assets/images/pic-1.png" alt="" />
+    </div>
+    <div class="menu">
+      <h3>{{fullName}} <br /><span>Welcome</span></h3>
+      <ul>
+        <li><i class="uil uil-user"></i><a href="#">My Profile</a></li>
+        <li><i class="uil uil-edit"></i><a href="#">Edit Profile</a></li>
+        <li><i class="uil uil-setting"></i><a href="#">Setting</a></li>
+        <li>
+          <i class="uil uil-sign-out-alt"></i><a (click)="logOut()">Log Out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!--User Account Dropdown End-->
+</header>
+
+<!--Navbar End-->

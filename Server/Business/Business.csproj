@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Abstract\" />
+    <None Remove="BusinessAspect\" />
+    <None Remove="CCS\" />
+    <None Remove="Concreate\" />
+    <None Remove="Constants\" />
+    <None Remove="DependencyResolvers\" />
+    <None Remove="ValidationRules\" />
+    <None Remove="BusinessAspect\Autofac\" />
+    <None Remove="DependencyResolvers\Autofac\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Abstract\" />
+    <Folder Include="BusinessAspect\" />
+    <Folder Include="CCS\" />
+    <Folder Include="Concreate\" />
+    <Folder Include="Constants\" />
+    <Folder Include="DependencyResolvers\" />
+    <Folder Include="ValidationRules\" />
+    <Folder Include="BusinessAspect\Autofac\" />
+    <Folder Include="DependencyResolvers\Autofac\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
+    <ProjectReference Include="..\Entities\Entities.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extras.DynamicProxy" Version="7.1.0" />
+  </ItemGroup>
+</Project>

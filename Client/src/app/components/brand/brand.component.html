@@ -1,0 +1,20 @@
+<section class="vehicles" id="vehicles">
+  <h1 class="heading"><span>markalar</span></h1>
+
+  <div class="swiper vehicles-slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide box" *ngFor="let brandDetails of brandDetails">
+        <img
+          [src]="getImagePath(brandDetails.imagePath)"
+          [alt]="brandDetails.imageDate"
+        />
+        <div class="content">
+          <h3>{{ brandDetails.brandName }}</h3>
+          <a routerLink="/Arabalar" class="button">daha fazla</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper-pagination"></div>
+  </div>
+</section>

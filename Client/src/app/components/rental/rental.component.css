@@ -1,0 +1,58 @@
+:root {
+  --yellow: #f9d806;
+  --light-yellow: #ffee80;
+  --black: #130f40;
+  --light-color: #666;
+  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  --border: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+
+* {
+  /* border: none; */
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+}
+.rent-btn {
+  background: var(--light-yellow);
+  color: var(--black);
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 1rem;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 3rem;
+  transition: transform 0.8 all;
+}
+
+.rent-btn:hover {
+  background: var(--yellow);
+  transform: scale(1.1);
+}
+
+
+.rentTextColor{
+    font-weight: 500;
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.returnTextColor{
+    font-weight: 500;
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.form-control{
+    font-weight: 500;
+    font-size: 1.8rem;
+    border: 2px solid var(--black);
+}
+
+.rentForm{
+    margin-top: 9.8%;
+    margin-bottom: 9.3%;
+
+}

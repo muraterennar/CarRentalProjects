@@ -1,0 +1,12 @@
+/Users/muraterennar/Projects/CarRentalNew/Core/bin/Debug/net7.0/Core.deps.json
+/Users/muraterennar/Projects/CarRentalNew/Core/bin/Debug/net7.0/Core.dll
+/Users/muraterennar/Projects/CarRentalNew/Core/bin/Debug/net7.0/Core.pdb
+/Users/muraterennar/Projects/CarRentalNew/Core/obj/Debug/net7.0/Core.csproj.AssemblyReference.cache
+/Users/muraterennar/Projects/CarRentalNew/Core/obj/Debug/net7.0/Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/muraterennar/Projects/CarRentalNew/Core/obj/Debug/net7.0/Core.AssemblyInfoInputs.cache
+/Users/muraterennar/Projects/CarRentalNew/Core/obj/Debug/net7.0/Core.AssemblyInfo.cs
+/Users/muraterennar/Projects/CarRentalNew/Core/obj/Debug/net7.0/Core.csproj.CoreCompileInputs.cache
+/Users/muraterennar/Projects/CarRentalNew/Core/obj/Debug/net7.0/Core.dll
+/Users/muraterennar/Projects/CarRentalNew/Core/obj/Debug/net7.0/refint/Core.dll
+/Users/muraterennar/Projects/CarRentalNew/Core/obj/Debug/net7.0/Core.pdb
+/Users/muraterennar/Projects/CarRentalNew/Core/obj/Debug/net7.0/ref/Core.dll

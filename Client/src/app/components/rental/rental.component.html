@@ -1,0 +1,35 @@
+<div class="container rentForm">
+  <form [formGroup]="rentalForm">
+    <div class="col-md-12 mb-3">
+      <label for="rentDate" class="form-label rentTextColor"
+        >Kiralama Tarihi</label
+      >
+      <input
+        type="datetime-local"
+        class="form-control border"
+        id="rentDate"
+        aria-describedby="emailHelp"
+        formControlName="rentDate"
+        [(ngModel)]="newRentDate"
+      />
+    </div>
+
+    <div class="col-md-12 mb-3">
+      <label for="returnDate" class="form-label returnTextColor"
+        >Teslim Tarihi</label
+      >
+      <input
+        type="datetime-local"
+        class="form-control border"
+        id="returnDate"
+        aria-describedby="emailHelp"
+        formControlName="returnDate"
+        [(ngModel)]="newReturnDate"
+      />
+    </div>
+
+    <div class="col-md-12 mb-3 text-center mx-auto">
+      <button class="rent-btn text-center" (click)="addRental(newRentDate, newReturnDate)" (click)="goToPayment()">Ödemeye Geç</button>
+    </div>
+  </form>
+</div>

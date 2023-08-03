@@ -1,0 +1,96 @@
+<table class="table table-striped table-sm">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Marka Adı</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let brand of brands">
+      <td>{{ brand.id }}</td>
+      <td>{{ brand.brandName }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="row" *ngIf="bradsAddedLoaded == false">
+  <button class="btn btn-success p-2 col-md-2 mx-auto" (click)="brandsAdd()">
+    Ekle
+  </button>
+
+  <button class="btn btn-danger p-2 col-md-2 mx-auto" (click)="brandsDelete()">
+    Sil
+  </button>
+</div>
+
+<div
+  class="col-md-12 mt-3 border border-3 border-dark p-5"
+  *ngIf="bradsAddedLoaded == true"
+>
+  <form
+    class="col-12 mx-auto p-3"
+    [formGroup]="brandsAddedForm"
+  >
+    <div class="col-auto mb-3">
+      <label for="inputPassword2" class="visually-hidden">Marka Adı</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputPassword2"
+        placeholder="Marka Adı"
+        formControlName="brandName"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="inputPassword2" class="visually-hidden">Marka Modeli</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputPassword2"
+        placeholder="Marka Modeli"
+        formControlName="brandModel"
+      />
+    </div>
+    <button type="submit" class="btn btn-success" (click)="brandAdd()">
+      Araç Ekle
+    </button>
+    <button type="submit" class="btn btn-dark ms-4" (click)="brandsAddCancel()">
+      İptal
+    </button>
+  </form>
+</div>
+
+<div
+  class="col-md-12 mt-3 border border-3 border-dark p-5"
+  *ngIf="bradsDeletedLoaded == true"
+>
+  <form
+    class="col-12 mx-auto p-3"
+    [formGroup]="brandsDeletedForm"
+  >
+    <div class="col-auto mb-3">
+      <label for="inputPassword2" class="visually-hidden">Marka Id</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputPassword2"
+        placeholder="Marka Adı"
+        formControlName="id"
+      />
+    </div>
+    <button
+      type="submit"
+      class="btn btn-success"
+      (click)="brandDelete()"
+    >
+      Araç Sil
+    </button>
+    <button
+      type="submit"
+      class="btn btn-dark ms-4"
+      (click)="brandsDeleteCancel()"
+    >
+      İptal
+    </button>
+  </form>
+</div>

@@ -1,0 +1,16 @@
+<!--Register Start-->
+<div class="register-form-container">
+  <!-- <span id="close-register-form" class="fas fa-times"></span> -->
+
+  <form [formGroup]="registerForm">
+    <h3>üye ol</h3>
+    <input formControlName="firstName" type="text" placeholder="Ad" class="box" />
+    <input formControlName="lastName" type="text" placeholder="Soyad" class="box" />
+    <input formControlName="email" type="email" placeholder="E-mail" class="box" />
+    <input formControlName="phoneNumber" type="text" placeholder="Telefon (+90)" class="box" />
+    <input formControlName="password" type="password" placeholder="Şifre" class="box" />
+    <input (click)="register()" type="submit" value="Kayıt Ol" class="button" />
+    <input type="submit" value="İptal" class="button bg-danger mx-5" routerLink="/AnaSayfa"/>
+  </form>
+</div>
+<!--Register End-->
